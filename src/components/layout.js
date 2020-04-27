@@ -45,6 +45,12 @@ const HeaderContainer = styled.div`
   margin-bottom: 64px;
 `;
 
+const LinkContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
 const FooterContainer = styled(HeaderContainer)`
   margin: 64px 0;
 `;
@@ -110,13 +116,13 @@ const Header = () => {
         />
       </Link>
 
-      <div>
+      <LinkContainer>
         {LINKS.map((link) => (
           <NavLink target="_blank" href={link.url} key={link.url}>
             {link.name}
           </NavLink>
         ))}
-      </div>
+      </LinkContainer>
     </HeaderContainer>
   );
 };

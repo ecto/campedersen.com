@@ -17,6 +17,10 @@ const Row = styled.div`
       opacity: 1;
     }
   }
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
 `;
 
 export default ({data, location}) => {
