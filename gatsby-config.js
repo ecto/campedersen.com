@@ -51,12 +51,7 @@ module.exports = {
         defaultLayouts: {
           posts: require.resolve('./src/components/post.js'),
         },
-        gatsbyRemarkPlugins: [
-          {resolve: 'gatsby-remark-images'},
-          {
-            resolve: `gatsby-remark-prismjs`,
-          },
-        ],
+        gatsbyRemarkPlugins: ['gatsby-remark-images', 'gatsby-remark-prismjs'],
       },
     },
     'gatsby-transformer-sharp',
