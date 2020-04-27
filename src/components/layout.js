@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import styled, {createGlobalStyle} from 'styled-components';
 import {Link, useStaticQuery, graphql} from 'gatsby';
 import Image from 'gatsby-image';
@@ -121,28 +121,20 @@ const Header = () => {
   );
 };
 
-const Footer = () => {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-  return (
-    <FooterContainer>
-      {mounted && (
-        <script
-          defer
-          data-uid="918babd8ed"
-          src="https://proud-morning-6594.ck.page/918babd8ed/index.js"
-        ></script>
-      )}
-      <LargeEmoji>
-        <span role="img" aria-label="smile emoji">
-          🙂
-        </span>
-      </LargeEmoji>
-    </FooterContainer>
-  );
-};
+const Footer = () => (
+  <FooterContainer>
+    <script
+      defer={true}
+      data-uid="918babd8ed"
+      src="https://proud-morning-6594.ck.page/918babd8ed/index.js"
+    ></script>
+    <LargeEmoji>
+      <span role="img" aria-label="smile emoji">
+        🙂
+      </span>
+    </LargeEmoji>
+  </FooterContainer>
+);
 
 export default ({title, description, children}) => (
   <Wrapper>
