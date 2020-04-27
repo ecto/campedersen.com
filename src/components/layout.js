@@ -123,11 +123,6 @@ const Header = () => {
 
 const Footer = () => (
   <FooterContainer>
-    <script
-      defer={true}
-      data-uid="918babd8ed"
-      src="https://proud-morning-6594.ck.page/918babd8ed/index.js"
-    ></script>
     <LargeEmoji>
       <span role="img" aria-label="smile emoji">
         🙂
