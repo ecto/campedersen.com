@@ -27,7 +27,6 @@ const Header = styled.div`
 
 export default ({data, pageContext, location}) => (
   <Layout
-    location={location}
     title={data.mdx.frontmatter.title}
     description={data.mdx.frontmatter.description || data.mdx.excerpt}
   >

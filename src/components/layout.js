@@ -144,7 +144,7 @@ const Footer = () => {
   );
 };
 
-export default ({location, title, description, children}) => (
+export default ({title, description, children}) => (
   <Wrapper>
     <SEO title={title} description={description} />
     <GlobalStyle />

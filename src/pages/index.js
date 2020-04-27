@@ -20,11 +20,10 @@ const Row = styled.div`
 `;
 
 export default ({data, location}) => {
-  const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMdx.edges;
 
   return (
-    <Layout location={location}>
+    <Layout>
       {posts.map(({node}) => {
         const title = node.frontmatter.title || node.fields.slug;
         return (
