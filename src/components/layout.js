@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import styled, {createGlobalStyle} from 'styled-components';
 import {Link, useStaticQuery, graphql} from 'gatsby';
 import Image from 'gatsby-image';
+import SEO from './seo';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -143,8 +144,9 @@ const Footer = () => {
   );
 };
 
-export default ({location, title, children}) => (
+export default ({location, title, description, children}) => (
   <Wrapper>
+    <SEO title={title} description={description} />
     <GlobalStyle />
     <Header />
     <main>{children}</main>

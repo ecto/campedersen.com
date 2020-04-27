@@ -1,9 +1,7 @@
 import React from 'react';
 import {Link, graphql} from 'gatsby';
 import styled from 'styled-components';
-
 import Layout from '../components/layout';
-import SEO from '../components/seo';
 
 const Row = styled.div`
   display: flex;
@@ -26,7 +24,7 @@ export default ({data, location}) => {
   const posts = data.allMdx.edges;
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       {posts.map(({node}) => {
         const title = node.frontmatter.title || node.fields.slug;
         return (

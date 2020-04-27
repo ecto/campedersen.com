@@ -5,7 +5,6 @@ import {MDXProvider} from '@mdx-js/react';
 import {MDXRenderer} from 'gatsby-plugin-mdx';
 
 import Layout from './layout';
-import SEO from './seo';
 
 // Provide common components here
 const shortcodes = {Link};
@@ -26,28 +25,22 @@ const Header = styled.div`
   }
 `;
 
-export default ({data, pageContext, location}) => {
-  const post = data.mdx;
-  const siteTitle = data.site.siteMetadata.title;
+export default ({data, pageContext, location}) => (
+  <Layout
+    location={location}
+    title={data.mdx.frontmatter.title}
+    description={data.mdx.frontmatter.description || data.mdx.excerpt}
+  >
+    <Header>
+      <h1>{data.mdx.frontmatter.title}</h1>
+      <span>{data.mdx.frontmatter.date}</span>
+    </Header>
 
-  return (
-    <Layout location={location} title={siteTitle}>
-      <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
-
-      <Header>
-        <h1>{post.frontmatter.title}</h1>
-        <span>{post.frontmatter.date}</span>
-      </Header>
-
-      <MDXProvider components={shortcodes}>
-        <MDXRenderer>{post.body}</MDXRenderer>
-      </MDXProvider>
-    </Layout>
-  );
-};
+    <MDXProvider components={shortcodes}>
+      <MDXRenderer>{data.mdx.body}</MDXRenderer>
+    </MDXProvider>
+  </Layout>
+);
 
 export const pageQuery = graphql`
   # query BlogPostBySlug($slug: String!) {
