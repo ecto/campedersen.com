@@ -35,13 +35,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Gatsby Starter Blog',
-        short_name: 'GatsbyJS',
+        name: 'Cam Pedersen',
+        short_name: 'Cam Pedersen',
         start_url: '/',
         background_color: '#ffffff',
-        theme_color: '#663399',
+        theme_color: '#000',
         display: 'minimal-ui',
-        icon: 'assets/gatsby-icon.png',
+        icon: 'assets/smile.png',
       },
     },
     {
