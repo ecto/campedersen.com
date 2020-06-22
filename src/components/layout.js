@@ -36,6 +36,11 @@ const Wrapper = styled.div`
   max-width: 640px;
   padding: 32px 16px;
   margin: 0 auto;
+
+  img,
+  video {
+    max-width: 100%;
+  }
 `;
 
 const HeaderContainer = styled.div`
