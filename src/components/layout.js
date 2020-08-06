@@ -16,14 +16,25 @@ const GlobalStyle = createGlobalStyle`
     font-weight: normal;
   }
 
+  pre {
+    font-variant-ligatures: none;
+  }
   :not(pre) > code[class*="language-"] {
-    background: lightyellow;
     font-family: 'Space Mono', 'Courier New', monospace;
-    color: #111;
+    background: rgba(0, 0, 0, 0.08);
+    color: rbga(0, 0, 0, 1);
   }
   pre[class*="language-"],
   :not(pre) > code[class*="language-"] {
     border: 0;
+  }
+
+  pre[class*="language-"] {
+    background: rgba(0, 0, 0, 0.02);
+  }
+  pre[class*="language-"] > code {
+    font-family: 'Space Mono', 'Courier New', monospace;
+    background: none;
   }
 `;
 
