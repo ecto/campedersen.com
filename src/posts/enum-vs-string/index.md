@@ -1,10 +1,12 @@
 ---
 layout: post
-title: Enums vs String Literals
+title: Enums vs String Literals in TypeScript
 date: 2020-08-06
 ---
 
 import decision from './decision.jpg';
+
+import soup from './soup.mp4';
 
 <img src={decision} width="128" style="float: right" />
 
@@ -131,14 +133,14 @@ const getWavelength = (color) => {
 };
 ```
 
-## Ergonomics
-
-This makes sense, but they are really similar on such a small scale. The real
+This makes sense, but they're really similar in this situation. The real
 difference is how they are used in a larger codebase.
 
-Let's say you have a configuration object, a big JSON blob, that you want to
-make sure is typesafe. You can use that to predictable render different UI based
-on the data.
+## Ergonomics
+
+There's a situation I ran into that challenged my assumptions. Let's say you
+have a configuration object, a big JSON blob, that you want to make sure is
+typesafe. You can use that to predictable render different UI based on the data.
 
 ```tsx
 type Color = 'red' | 'orange' | 'yellow' | 'blue' | 'indigo' | 'violet';
@@ -191,9 +193,15 @@ or
   color: 'red' as Color,
 ```
 
-This is a code smell to me. It's unnecessary code that will rot over time and
-unclear if it can be deleted. The only important thing important here is the
-data, and the compiler should be able to figure out what type it is.
+## What smells?
+
+<video src={soup} autoPlay loop width={256}
+style={{float: 'right', marginLeft: 8}} />
+
+This is a code smell to me, but as far as I know you can't lint for it. It's
+unnecessary code that will rot over time and unclear if it can be deleted. The
+only important thing important here is the data, and the compiler should be able
+to figure out what type it is.
 
 With an enum this hinting is unnecessary because the value includes the type
 information:
@@ -233,3 +241,9 @@ situation. **The less code you ship the better**, and as stated above enums will
 generate a value via compiled JS. If you don't need to attach extra info (like a
 name, or display value) to the data, a string literal will do just fine to
 define your object and give you that sweet TS autocompletion.
+
+## I could be wrong
+
+If you have different opinions I would love to hear.
+[Shoot me an email](mailto:cam@campedersen.com?subject=Enums) and let's talk
+about types!
