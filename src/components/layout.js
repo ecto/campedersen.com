@@ -66,6 +66,9 @@ const NavLink = styled.a`
 
 const LargeEmoji = styled.span`
   font-size: 2.56em;
+  span {
+    padding: 2px;
+  }
 `;
 
 const LINKS = [
