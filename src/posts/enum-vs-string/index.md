@@ -8,7 +8,7 @@ import decision from './decision.jpg';
 
 import soup from './soup.mp4';
 
-<img src={decision} width="128" style="float: right" />
+<img src={decision} width={128} style={{float: "right"}} />
 
 I've been fighting with
 [enums](https://www.typescriptlang.org/docs/handbook/enums.html) in TypeScript
