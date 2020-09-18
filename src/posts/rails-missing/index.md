@@ -1,5 +1,5 @@
 ---
-title: Missing records in Rails 6
+title: Missing records in Rails 6.1
 date: 2020-09-18
 ---
 
