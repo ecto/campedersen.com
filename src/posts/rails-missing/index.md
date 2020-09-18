@@ -70,5 +70,6 @@ Post
 ```
 
 It seems small but I love to see improvements like this. Rails continues to be a
-masterpiece of developer ergonomics, and I'd like to thank Tom Rossi and Rafael
-França for helping push it forward!
+masterpiece of developer ergonomics, and I'd like to thank
+[Tom Rossi](https://twitter.com/tomrossi7) and
+[Rafael França](https://twitter.com/rafaelfranca) for helping push it forward!
