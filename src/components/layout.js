@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Space Mono', 'Courier New', monospace;
     font-size: 14px;
     font-smoothing: antialiased;
+    font-variant-ligatures: none;
   }
 
   h1, h2, h3, h4, h4 {
