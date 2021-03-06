@@ -5,7 +5,7 @@ module.exports = {
       name: 'Cam Pedersen',
       summary: 'goober',
     },
-    description: 'a blog',
+    description: 'Web3, Smart Contracts, React, TypeScript, Dachshunds',
     siteUrl: 'https://campedersen.com/',
     social: {
       twitter: 'campedersen',
