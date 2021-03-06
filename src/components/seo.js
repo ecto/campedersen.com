@@ -1,9 +1,10 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import {useStaticQuery, graphql} from 'gatsby';
+import defaultMetaImage from '../../assets/spacetime.jpg';
 
-export default ({description, lang = 'en', meta = [], title}) => {
-  const {site} = useStaticQuery(
+export default ({description, lang = 'en', meta = [], title, postData}) => {
+  const {site, mdx} = useStaticQuery(
     graphql`
       query {
         site {
@@ -15,10 +16,16 @@ export default ({description, lang = 'en', meta = [], title}) => {
             }
           }
         }
+        mdx {
+          fields {
+            socialcard
+          }
+        }
       }
     `
   );
 
+  const image = `/${mdx?.fields?.socialcard || defaultMetaImage}`;
   const metaDescription = description || site.siteMetadata.description;
 
   return (
@@ -61,6 +68,22 @@ export default ({description, lang = 'en', meta = [], title}) => {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: 'image',
+          content: image,
+        },
+        {
+          name: 'og:image',
+          content: image,
+        },
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image',
+        },
+        {
+          name: 'twitter:image',
+          content: image,
         },
       ].concat(meta)}
     />

@@ -45,6 +45,19 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-social-cards',
+      options: {
+        // ommit to skip
+        authorImage: './assets/profile-pic.jpg',
+        // image to use when no cover in frontmatter
+        backgroundImage: './assets/spacetime.jpg',
+        // author to use when no auth in frontmatter
+        defaultAuthor: 'Cam Pedersen',
+        // card design
+        design: 'default', // 'default' or 'card'
+      },
+    },
+    {
       resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.mdx', '.md'],
