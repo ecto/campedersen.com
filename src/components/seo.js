@@ -26,9 +26,9 @@ export default ({description, lang = 'en', meta = [], title, pathname}) => {
     `
   );
 
-  // const image = `/${mdx?.fields?.socialcard || defaultMetaImage}`;
   const image = `${site.siteMetadata.siteUrl}${pathname}twitter-card.jpg`;
   const metaDescription = description || site.siteMetadata.description;
+  const metaTitle = title || site.siteMetadata.title;
 
   return (
     <Helmet
@@ -45,7 +45,7 @@ export default ({description, lang = 'en', meta = [], title, pathname}) => {
         },
         {
           property: `og:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           property: `og:description`,
@@ -61,7 +61,7 @@ export default ({description, lang = 'en', meta = [], title, pathname}) => {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           name: `twitter:description`,
