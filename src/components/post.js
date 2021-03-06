@@ -29,6 +29,7 @@ export default ({data, pageContext, location}) => (
   <Layout
     title={data.mdx.frontmatter.title}
     description={data.mdx.frontmatter.description || data.mdx.excerpt}
+    pathname={location.pathname}
   >
     <Header>
       <h1>{data.mdx.frontmatter.title}</h1>

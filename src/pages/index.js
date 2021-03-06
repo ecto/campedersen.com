@@ -27,7 +27,7 @@ export default ({data, location}) => {
   const posts = data.allMdx.edges;
 
   return (
-    <Layout>
+    <Layout pathname={location.pathname}>
       {posts.map(({node}) => {
         const title = node.frontmatter.title || node.fields.slug;
         return (

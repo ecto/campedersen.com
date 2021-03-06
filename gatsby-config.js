@@ -45,26 +45,31 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-social-cards',
-      options: {
-        // ommit to skip
-        authorImage: './assets/profile-pic.jpg',
-        // image to use when no cover in frontmatter
-        backgroundImage: './assets/spacetime.jpg',
-        // author to use when no auth in frontmatter
-        defaultAuthor: 'Cam Pedersen',
-        // card design
-        design: 'default', // 'default' or 'card'
-      },
-    },
-    {
       resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.mdx', '.md'],
         defaultLayouts: {
           posts: require.resolve('./src/components/post.js'),
         },
-        gatsbyRemarkPlugins: ['gatsby-remark-images', 'gatsby-remark-prismjs'],
+        gatsbyRemarkPlugins: [
+          'gatsby-remark-images',
+          'gatsby-remark-prismjs',
+          {
+            resolve: `gatsby-remark-twitter-cards`,
+            options: {
+              title: '', // website title
+              separator: '', // default
+              author: 'Cam Pedersen',
+              background: require.resolve('./assets/card-background.jpg'), // path to 1200x630px file or hex code, defaults to black (#000000)
+              fontColor: '#000', // defaults to white (#ffffff)
+              // titleFontSize: 96, // default
+              // subtitleFontSize: 60, // default
+              // fontStyle: 'monospace', // default
+              fontFile: require.resolve('./assets/fonts/SpaceMono-Bold.ttf'), // will override fontStyle - path to custom TTF font
+              // useFrontmatterSlug: false, // default, if true it will use the slug defined in the post frontmatter
+            },
+          },
+        ],
       },
     },
     'gatsby-transformer-sharp',

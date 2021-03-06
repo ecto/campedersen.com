@@ -157,9 +157,9 @@ const Footer = () => (
   </FooterContainer>
 );
 
-export default ({title, description, children}) => (
+export default ({title, description, children, pathname}) => (
   <Wrapper>
-    <SEO title={title} description={description} />
+    <SEO title={title} description={description} pathname={pathname} />
     <GlobalStyle />
     <Header />
     <main>{children}</main>
