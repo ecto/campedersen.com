@@ -56,10 +56,6 @@ export default ({description, lang = 'en', meta = [], title, pathname}) => {
           content: `website`,
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
           name: `twitter:creator`,
           content: site.siteMetadata.social.twitter,
         },
@@ -72,19 +68,19 @@ export default ({description, lang = 'en', meta = [], title, pathname}) => {
           content: metaDescription,
         },
         {
-          name: 'image',
-          content: image,
-        },
-        {
-          name: 'og:image',
-          content: image,
-        },
-        {
           name: 'twitter:card',
           content: 'summary_large_image',
         },
         {
           name: 'twitter:image',
+          content: image,
+        },
+        {
+          name: 'image',
+          content: image,
+        },
+        {
+          name: 'og:image',
           content: image,
         },
       ].concat(meta)}
