@@ -84,6 +84,13 @@ export default ({description, lang = 'en', meta = [], title, pathname}) => {
           content: image,
         },
       ].concat(meta)}
-    />
+    >
+      <script
+        async
+        defer
+        data-domain="campedersen.com"
+        src="https://plausible.io/js/plausible.js"
+      />
+    </Helmet>
   );
 };
