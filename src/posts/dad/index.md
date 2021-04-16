@@ -10,7 +10,8 @@ import young from './young.jpg';
 
 import window from './window.jpg';
 
-<img src={young} width={256} style={{float: "right", margin: "0 0 8px 8px"}} />
+<img src={young} width={256}
+style={{float: "right", margin: "0 0 8px 8px", maxWidth: "50%"}} />
 
 Ellis Hans Pedersen (R) -- Hans to his family, Pete to his friends, and Ellis to
 the bill collectors -- survived damn near everything except for a bad heart. He
